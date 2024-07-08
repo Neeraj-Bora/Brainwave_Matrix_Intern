@@ -1,0 +1,9 @@
+.templates{
+    background-color: rgba(93, 8, 117, 0.886);
+}
+.s2{
+    transform: rotate(60deg)
+}
+.s1{
+    transform: rotate(30deg)
+}
