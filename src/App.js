@@ -1,9 +1,12 @@
 import "./App.css";
+import React ,{useState} from 'react';
 import Navbar from './Components/Navbar.js';
 import Main from "./Components/Main.js";
 import Login from "./Components/Login.js";
-import Footer from "./Components/Footer.js"
-import Mtv from "./Components/Mtv.js";
+
+import StudioReels from "./Components/StudioReels.js";
+// import Mtv from "./Components/Mtv.js";
+import WebcamCapture from './Components/WebcamCapture.js'
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,17 +14,28 @@ import {
 } from 'react-router-dom';
 
 function App() {
+  // const [webCam, setWebCam]= useState(false);
+  // const fireWebCam=()=>{
+  //   setWebCam(true);
+  // }
+
   return (
-    <div className="min-w-[100%] min-h-[100%]">
+    
+
+    <div>
+
       <Router>
-        {/* <Navbar/> */}
-        {/* <Routes>
+        <Navbar fireWebCam={fireWebCam}/>
+        
+        <Routes>
           <Route exact path="/login" element={<Login/>}/>   
           <Route exact path="/" element={<Main/>}/>
-        </Routes> */}
-        <Mtv/>
-        {/* <Footer/> */}
+          <Route exact path='/studio' element={<StudioReels/>}/>
+        </Routes>
+
       </Router>
+      {/* <WebcamCapture/> */}
+      
     </div>
       
   );

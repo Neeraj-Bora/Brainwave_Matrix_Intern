@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar.js"
-import Login from "./Login.js"
-import Otp from "./Otp.js";
+
 import Banner from "./Banner.js";
 import Categories from "./Categories.js";
+import Footer from "./Footer.js"
 
 export default function Main() {
   return (
@@ -14,7 +13,7 @@ export default function Main() {
       <div className="Categories">
         <Categories/>
       </div>
-      
+      <Footer/>
   </div>
       
         

@@ -5,9 +5,12 @@ import search from "./logo/search.png";
 import login from "./logo/login.png";
 import heart from "./logo/heart.png";
 import bag from "./logo/bag.png";
-import Product from "./Product.js"
-import revamp from "./logo/revamp.png"
-export default function Navbar() {
+import Product from "./Product.js";
+import revamp from "./logo/revamp.png";
+import Studio from './Studio.js';
+// import Webcam from 'react-webcam';
+// import Cam from './Cam.js';
+export default function Navbar(props) {
 
   const beauty = [
     {
@@ -269,10 +272,18 @@ export default function Navbar() {
     setProductType(null)
     setShowProduct(false);
   };
+  const [studio, setStudio]=useState(false);
+  const showStudio=()=>{
+    setStudio(true);
+  }
+  const unshowStudio=()=>{
+    setStudio(false);
+  }
+  
 
   return (
     <div className="bg-white  w-full">
-      <nav className="navbar flex shadow-xl">
+      <nav className="navbar flex shadow-lg">
       <Link to="/"><div className="brandName max-w-20 mx-3">
           <img src={logo} />
           <img src={revamp}/>
@@ -285,10 +296,11 @@ export default function Navbar() {
           <li className="px-4 py-8 border border-white hover:border-b-black border-4" onMouseOver={()=>{handleMouseOver(homeLiving)}}>HOME&LIVING</li>
           <li className="px-4 py-8 border border-white hover:border-b-black border-4" onMouseOver={()=>{handleMouseOver(beauty)}}>BEAUTY</li>
           {showProduct && <Product typeProduct={typeProduct} onMouseOut={handleMouseOut}/>}
-          <li className="px-4 py-8 border border-white hover:border-b-black border-4">
+          <li className="px-4 py-8 border border-white hover:border-b-black border-4" onMouseOver={showStudio}>
             STUDIO <sup className="text-red-500">NEW</sup>
+            {studio && <Studio onMouseOut={unshowStudio}/>}
           </li>
-          <li className="px-4 py-8 border border-white hover:border-b-black border-4">MTv</li>
+          <li className="px-4 py-8 border border-white hover:border-b-black border-4" onClick={props.fireWebCam}>webCam</li>
         </ul>
         <div className="searchBox flex h-10 w-1/4 ml-8 my-6 bg-gray-100 items-center rounded-md">
           <img className="h-5 w-5 mr-1 ml-3 bg-gray-100" src={search} />
