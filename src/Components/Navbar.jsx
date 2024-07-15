@@ -12,10 +12,10 @@ export default function Navbar(){
                 </div>
                 <div className='flex items-center utility m-5'>
                     <ul className='flex '>
-                        <li className='mr-10 relative text-gray-400 hover:text-white'><Link to='home' spy={true} smooth={true} offset={-50} duration={500} >Home</Link></li>
-                        <li className='mr-10 relative text-gray-400 hover:text-white'><Link to='blogpost' spy={true} smooth={true} offset={-50} duration={500} >Blog Posts</Link></li>
-                        <li className='mr-10 relative text-gray-400 hover:text-white'><Link to='templates' spy={true} smooth={true} offset={-50} duration={500} >Templates</Link></li>
-                        <li className='mr-10 relative text-gray-400 hover:text-white'>Login</li>
+                        <li className='cursor-pointer mr-10 relative text-gray-400 hover:text-white'><Link to='home' spy={true} smooth={true} offset={-50} duration={500} >Home</Link></li>
+                        <li className='cursor-pointer mr-10 relative text-gray-400 hover:text-white'><Link to='blogpost' spy={true} smooth={true} offset={-50} duration={500} >Blog Posts</Link></li>
+                        <li className='cursor-pointer mr-10 relative text-gray-400 hover:text-white'><Link to='templates' spy={true} smooth={true} offset={-50} duration={500} >Templates</Link></li>
+                        <li className='cursor-pointer mr-10 relative text-gray-400 hover:text-white'><Link to='/login'>Login</Link></li>
                     </ul>
                 </div>
             </nav>
